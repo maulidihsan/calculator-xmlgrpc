@@ -1,0 +1,14 @@
+{
+  "name": "xml-rpc",
+  "version": "1.0.0",
+  "description": "XML-RPC Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maulid Ihsan",
+  "license": "ISC",
+  "dependencies": {
+    "xmlrpc": "^1.3.2"
+  }
+}
