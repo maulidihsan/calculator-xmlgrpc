@@ -7,8 +7,14 @@ server.on('NotFound', (method, params) => {
   console.log('Method Don\'t Exist');
 });
 server.on('infixToPostfix', (err, params, cb) => {
-  const postfix = infixToPostfix(params[0]);
-  console.log(calculator(postfix))
-  cb(null, calculator(postfix));
+  let result;
+  try {
+    const postfix = infixToPostfix(params[0]);
+    result = calculator(postfix);
+    console.log(`${params[0]} = ${result}`);
+  } catch (e) {
+    result = 'Compute Error';
+  }
+  cb(null, result);
 });
 console.log('XML-RPC server listening on port 9091');
