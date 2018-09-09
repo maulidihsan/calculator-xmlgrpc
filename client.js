@@ -8,7 +8,7 @@ const rl = readline.createInterface({
 
 const client = xmlrpc.createClient({ host: '0.0.0.0', port: 9090 });
 rl.on('line', (text) => {
-  client.methodCall('infixToPostfix', [text], (err, value) => {
+  client.methodCall('calculate', [text], (err, value) => {
     if(err) {
       console.log(err);
     } else {

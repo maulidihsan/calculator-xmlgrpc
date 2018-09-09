@@ -6,7 +6,7 @@ const server = xmlrpc.createServer({ host: '0.0.0.0', port: 9090 });
 server.on('NotFound', (method, params) => {
   console.log('Method Don\'t Exist');
 });
-server.on('infixToPostfix', (err, params, cb) => {
+server.on('calculate', (err, params, cb) => {
   let result;
   try {
     const postfix = infixToPostfix(params[0]);
@@ -17,4 +17,4 @@ server.on('infixToPostfix', (err, params, cb) => {
   }
   cb(null, result);
 });
-console.log('XML-RPC server listening on port 9091');
+console.log('XML-RPC server listening on port 9090');
